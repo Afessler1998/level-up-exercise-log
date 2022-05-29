@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 import React, { useState } from "react";
 import {
   Text,
@@ -70,9 +69,9 @@ const NewSetForm = ({ navigation }) => {
                     onChangeValue={childOnChangeReps}
                   />
                 )}
-                {dataOptions.rpe && (
+                {dataOptions.rir && (
                   <NewSetFormTextbox
-                    caption="RPE"
+                    caption="RIR"
                     textboxValue={rpeValue}
                     onChangeValue={childOnChangeRpe}
                   />
@@ -130,7 +129,7 @@ const NewSetForm = ({ navigation }) => {
                   distance,
                   weight,
                   reps,
-                  rpe,
+                  rir,
                   heartRate,
                   calories
                 } = dataOptions;
@@ -140,7 +139,7 @@ const NewSetForm = ({ navigation }) => {
                   (distance && distanceValue === "") ||
                   (weight && weightValue === "") ||
                   (reps && repsValue === "") ||
-                  (rpe && rpeValue === "") ||
+                  (rir && rpeValue === "") ||
                   (heartRate && heartRateValue === "") ||
                   (calories && caloriesValue === "")
                 ) {
@@ -158,20 +157,11 @@ const NewSetForm = ({ navigation }) => {
                   (distance && Number.isNaN(distanceValue)) ||
                   (weight && Number.isNaN(weightValue)) ||
                   (reps && Number.isNaN(repsValue)) ||
-                  (rpe && Number.isNaN(rpeValue)) ||
+                  (rir && Number.isNaN(rpeValue)) ||
                   (heartRate && Number.isNaN(heartRateValue)) ||
                   (calories && Number.isNaN(caloriesValue))
                 ) {
                   setErrorMsg("Input fields may only contain number values");
-                  if (hapticFeedback) Haptics.notificationAsync("warning");
-                  setTimeouts([
-                    ...timeouts,
-                    cancellableTimeout(() => {
-                      setErrorMsg("");
-                    }, 3000)
-                  ]);
-                } else if (rpe && rpeValue > 10) {
-                  setErrorMsg("RPE must between 1 and 10");
                   if (hapticFeedback) Haptics.notificationAsync("warning");
                   setTimeouts([
                     ...timeouts,
@@ -194,7 +184,7 @@ const NewSetForm = ({ navigation }) => {
                   }
                   if (weight) setData.weight = parseFloat(weightValue);
                   if (reps) setData.reps = parseInt(repsValue, 10);
-                  if (rpe) setData.rpe = parseInt(rpeValue, 10);
+                  if (rir) setData.rir = parseInt(rpeValue, 10);
                   if (heartRate) {
                     setData.heartRate = parseInt(heartRateValue, 10);
                   }

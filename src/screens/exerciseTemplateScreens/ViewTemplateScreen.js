@@ -54,7 +54,7 @@ const ViewTemplateScreen = ({ navigation }) => {
               {template.dataOptions.weight && (
                 <Text style={styles.dataOptionsText}>Weight</Text>
               )}
-              {template.dataOptions.rpe && (
+              {template.dataOptions.rir && (
                 <Text style={styles.dataOptionsText}>RPE</Text>
               )}
               {template.dataOptions.reps && (

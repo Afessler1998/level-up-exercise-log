@@ -28,7 +28,7 @@ const CreatingTemplateScreen = ({ navigation }) => {
   const [dataOptions, setDataOptions] = useState({
     weight: false,
     reps: false,
-    rpe: false,
+    rir: false,
     duration: false,
     distance: false,
     speed: false,
@@ -112,7 +112,7 @@ const CreatingTemplateScreen = ({ navigation }) => {
                 } else if (
                   !dataOptions.weight &&
                   !dataOptions.reps &&
-                  !dataOptions.rpe &&
+                  !dataOptions.rir &&
                   !dataOptions.duration &&
                   !dataOptions.distance &&
                   !dataOptions.speed &&

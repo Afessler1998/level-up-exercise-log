@@ -29,8 +29,8 @@ const DataOptionsView = ({ exerciseType, dataOptions, setDataOptions }) => {
             setDataOptions={setDataOptions}
           />
           <SwitchCaption
-            switchFor="rpe"
-            caption="RPE"
+            switchFor="rir"
+            caption="RIR"
             dataOptions={dataOptions}
             setDataOptions={setDataOptions}
           />

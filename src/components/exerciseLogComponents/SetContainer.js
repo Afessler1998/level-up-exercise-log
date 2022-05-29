@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 import React, { useCallback, useEffect } from "react";
 import {
   View,
@@ -105,19 +104,19 @@ const SetContainer = ({
                 </Animated.Text>
               );
               break;
-            case "rpe":
+            case "rir":
               dataComponent = (
                 <Text
-                  key={"rpe"}
+                  key={"rir"}
                   style={styles.text}
-                >{`RPE: ${set.rpe} `}</Text>
+                >{`RIR: ${set.rir} `}</Text>
               );
               animDataComponent = (
                 <Animated.Text
-                  key={"rpe"}
+                  key={"rir"}
                   style={[styles.text, { opacity: fadeAnim }]}
                 >
-                  {`RPE: ${set.rpe} `}
+                  {`RIR: ${set.rir} `}
                 </Animated.Text>
               );
               break;
