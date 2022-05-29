@@ -128,6 +128,7 @@ const CreatingTemplateScreen = ({ navigation }) => {
                     }, 3000)
                   ]);
                 } else {
+                  console.log(dataOptions);
                   const authToken = await SecureStore.getItemAsync("authToken");
                   const serverResponse = await fetch(
                     `${environmentVars.serverUrl}/templates/addTemplate`,

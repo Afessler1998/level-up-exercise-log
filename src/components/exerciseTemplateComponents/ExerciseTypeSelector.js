@@ -34,7 +34,7 @@ const ExerciseTypeSelector = ({
           setDataOptions({
             weight: false,
             reps: false,
-            rpe: false,
+            rir: false,
             duration: false,
             distance: false,
             speed: false,
