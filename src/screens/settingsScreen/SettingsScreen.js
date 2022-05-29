@@ -2,10 +2,11 @@ import React from "react";
 import { View, Text, SafeAreaView, StyleSheet, Dimensions } from "react-native";
 import * as SecureStore from "expo-secure-store";
 import { useSelector } from "react-redux";
-import SwitchCaption from "../components/settingsScreenComponents/SwitchCaption";
-import GrayBtn from "../components/GrayBtn";
-import { darkGrey, lightestGrey, white } from "../colorPalette";
-import { header, signInButtonText } from "../fontSizeEnum";
+import SwitchCaption from "../../components/settingsScreenComponents/SwitchCaption";
+import GrayBtn from "../../components/GrayBtn";
+import GrayBtnNoMarginTop from "../../components/GrayBtnNoMarginTop";
+import { darkGrey, lightestGrey, white } from "../../colorPalette";
+import { header, signInButtonText } from "../../fontSizeEnum";
 
 const SettingsScreen = ({ navigation }) => {
   const userSettings = useSelector((state) => state.userSettings);
@@ -37,6 +38,12 @@ const SettingsScreen = ({ navigation }) => {
             onPress={async () => {
               await SecureStore.deleteItemAsync("authToken");
               navigation.navigate("signInScreen");
+            }}
+          />
+          <GrayBtnNoMarginTop
+            btnText="DELETE ACCOUNT"
+            onPress={async () => {
+              navigation.navigate("ConfirmDeleteAccount");
             }}
           />
         </View>

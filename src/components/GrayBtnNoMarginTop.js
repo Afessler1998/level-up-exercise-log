@@ -6,7 +6,7 @@ import { buttonText } from "../fontSizeEnum";
 
 const screenWidth = Dimensions.get("window").width;
 
-const GrayBtn = ({ btnText, onPress }) => (
+const GrayBtnNoMarginTop = ({ btnText, onPress }) => (
   <AwesomeButton
     onPress={onPress}
     width={screenWidth * 0.7}
@@ -26,7 +26,6 @@ const GrayBtn = ({ btnText, onPress }) => (
 
 const styles = StyleSheet.create({
   btn: {
-    marginTop: 20,
     marginBottom: 20
   },
   text: {
@@ -46,4 +45,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default GrayBtn;
+export default GrayBtnNoMarginTop;

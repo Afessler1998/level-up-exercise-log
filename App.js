@@ -28,7 +28,8 @@ import ViewTemplateScreen from "./src/screens/exerciseTemplateScreens/ViewTempla
 import DeleteTemplateForm from "./src/screens/exerciseTemplateScreens/DeleteTemplateForm";
 import SelectExerciseScreen from "./src/screens/statsScreen/SelectExerciseScreen";
 import ViewStatsScreen from "./src/screens/statsScreen/ViewStatsScreen";
-import SettingsScreen from "./src/screens/SettingsScreen";
+import SettingsScreen from "./src/screens/settingsScreen/SettingsScreen";
+import ConfirmDeleteAccountScreen from "./src/screens/settingsScreen/ConfirmDeleteAccountScreen";
 import TabBarIcon from "./src/components/TabBarIcon";
 import store from "./src/redux-store/store";
 import { white, lightestGrey, blue } from "./src/colorPalette";
@@ -73,7 +74,10 @@ const authFlow = createSwitchNavigator({
         })
       },
       Settings: {
-        screen: SettingsScreen
+        screen: createSwitchNavigator({
+          SettingsScreen: SettingsScreen,
+          ConfirmDeleteAccount: ConfirmDeleteAccountScreen
+        })
       }
     },
     {
