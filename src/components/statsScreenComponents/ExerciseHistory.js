@@ -1,4 +1,3 @@
-/* eslint-disable no-shadow */
 import React, { useState } from "react";
 import { View, Text, ScrollView, Dimensions, StyleSheet } from "react-native";
 import monthNumToString from "../../../lib/utils/monthNumToString";
@@ -69,7 +68,7 @@ const ExerciseHistory = ({ statData, exerciseName }) => {
                     )} ${date.getDate()}, ${date.getFullYear()}`}
                   </Text>
                   {sets.map((setData) => {
-                    const { reps, weight, rpe, duration, distance, _id } =
+                    const { reps, weight, rir, duration, distance, speed, calories, heartRate, _id } =
                       setData;
                     setNum += 1;
                     return (
@@ -84,12 +83,17 @@ const ExerciseHistory = ({ statData, exerciseName }) => {
                         </View>
                         <Text style={styles.setDataText}>
                           {reps && `Reps: ${reps}   `}
-                          {rpe && `RPE: ${rpe}   `}
+                          {rir && `RIR: ${rir}   `}
                           {distance && `Distance: ${distance}   `}
+                          {speed && `Speed: ${speed}   `}
                         </Text>
                         <Text style={styles.setDataText}>
                           {weight && `Weight: ${weight}   `}
                           {duration && `Duration: ${duration}   `}
+                          {calories && `Calories: ${calories}   `}
+                        </Text>
+                        <Text style={styles.setDataText}>
+                          {heartRate && `Heart Rate: ${heartRate}   `}
                         </Text>
                       </View>
                     );
