@@ -68,14 +68,18 @@ const ExerciseHistory = ({ statData, exerciseName }) => {
                     )} ${date.getDate()}, ${date.getFullYear()}`}
                   </Text>
                   {sets.map((setData) => {
-                    const { reps, weight, rir, duration, distance, speed, calories, heartRate, _id } =
-                      setData;
+                    const { reps, weight, rir, duration, distance, speed, calories, heartRate, _id } = setData;
+
+                    //determine exercise type to remove Set number label for cardio
+                    let exerciseType = "Strength";
+                    if (duration || distance || speed || calories || heartRate) exerciseType = "Cardio";
+
                     setNum += 1;
                     return (
                       <View key={_id}>
                         <View style={styles.setTextContainer}>
                           <Text style={[styles.setText, styles.setDataText]}>
-                            {`Set ${setNum}:`}
+                            {exerciseType === "Strength" && `Set ${setNum}:`}
                           </Text>
                           {setData.isPr && (
                             <SvgLogo size={26} backgroundColor={lighterGrey} />
